@@ -65,14 +65,14 @@ Review.create!({
 
 Review.create!({
   user_id: user2.id,
-  product_id: 2,
+  product_id: 1,
   description: "I can't live without this product",
   rating: 5
 })
 
 Review.create!({
   user_id: user3.id,
-  product_id: 3,
+  product_id: 1,
   description: "It was amazing until it broke",
   rating: 3
 })

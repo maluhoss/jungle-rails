@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for ordering from jungle.com! </h1>
+    <p>
+      Here are the items you've ordered:
+    </p>
+    <table>
+      <thead>
+        <th>Product</th>
+        <th> Quantity </th>
+        <th> Item Total </th>
+      </thead>
+      <tbody>
+      <% @order.line_items.each do |line_item| %>
+      <tr>
+        <td> <%= line_item.product.name %></td>
+        <td> <%= line_item.quantity %> </td>
+        <td><%= line_item.total_price_cents / 100.00 %></td>
+      </tr>
+      <% end %>
+      </tbody>
+
+    </table>
+    <h4>Your total: <%= @order.total_cents / 100.00 %> </h4>
+    <p>Thanks again for supporting us and have a great day!</p>
+  </body>
+</html>

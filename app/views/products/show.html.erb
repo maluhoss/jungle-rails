@@ -25,6 +25,14 @@
         </dl>
       </div>
 
+      <%= form_for([@product, @review]) do |f| %>
+       <%= label_tag(:description, "Description:") %>
+       <%= f.text_area(:description) %>
+       <%= label_tag(:rating, "Rating") %>
+       <%= f.select :rating, [1,2, 3, 4, 5] %>
+       <%= submit_tag("Submit") %>
+     <% end %>
+
     <div class="col-sm-8">
         <dl class="dl-vertical">
           <% @product.reviews.each do |review| %>
@@ -42,3 +50,4 @@
   </article>
 
 </section>
+
